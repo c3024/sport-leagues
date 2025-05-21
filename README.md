@@ -57,24 +57,22 @@ npm run dev
 ## Folder Structure
 
 /app
-
-layout.tsx
-
-page.tsx
+- layout.tsx
+- page.tsx
 
 /components
-LeagueCard.tsx
-SearchBar.tsx
-SportFilterDropdown.tsx
+- LeagueCard.tsx
+- SearchBar.tsx
+- SportFilterDropdown.tsx
 
 /lib
-api.ts
+- api.ts
 
 /public
-favicon.ico
+- favicon.ico
 
 /styles
-globals.css
+- globals.css
 
 ## Linting & Formatting
 
