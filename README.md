@@ -9,17 +9,17 @@ This is a responsive single-page app built with **Next.js App Router** and **Typ
 
 ## Decisions & Considerations
 
-	•	Used a minimal, functional UI with priority on usability over visual polish (as per assignment scope)
-	•	Avoided server-side rendering or server-side caching since the dataset is small and API latency is low
-	•	Kept badge cache in memory with TTL for simplicity over localStorage/IndexedDB
-	•	Could be extended with pagination, sorting, or more detailed league views
+- Used a minimal, functional UI with priority on usability over visual polish (as per assignment scope)
+- Avoided server-side rendering or server-side caching since the dataset is small and API latency is low
+- Kept badge cache in memory with TTL for simplicity over localStorage/IndexedDB
+- Could be extended with pagination, sorting, or more detailed league views
 
 ## Possible Further Improvements
 
-	•	Use SWR or React Query for better caching and revalidation
-	•	Persist search/sport filters in URL query params
-	•	Add testing with Jest + React Testing Library
-	•	Add unit types and stronger domain modeling for API responses
+- Use SWR or React Query for better caching and revalidation
+- Persist search/sport filters in URL query params
+- Add testing with Jest + React Testing Library
+- Add unit types and stronger domain modeling for API responses
 
 ## Features
 
@@ -57,7 +57,9 @@ npm run dev
 ## Folder Structure
 
 /app
+
 layout.tsx
+
 page.tsx
 
 /components
