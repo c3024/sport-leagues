@@ -1,6 +1,7 @@
 # Sports Leagues SPA
 
-This is a responsive single-page app built with **Next.js App Router** and **TypeScript** to display and filter sports leagues using the [TheSportsDB API](https://www.thesportsdb.com/api.php).
+This is a responsive single-page app built with **Next.js App Router** and **TypeScript** to display and filter sports leagues using the [TheSportsDB API](https://www.thesportsdb.com/api.php). Check out the deployed version
+[here](https://sport-leagues.vercel.app). 
 
 ## AI Tools Used
 
