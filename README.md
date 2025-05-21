@@ -59,6 +59,8 @@ npm run dev
 /app
 - layout.tsx
 - page.tsx
+- globals.css
+- favicon.ico
 
 /components
 - LeagueCard.tsx
@@ -68,11 +70,6 @@ npm run dev
 /lib
 - api.ts
 
-/public
-- favicon.ico
-
-/styles
-- globals.css
 
 ## Linting & Formatting
 
