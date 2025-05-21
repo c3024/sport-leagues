@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sports Leagues SPA
 
-## Getting Started
+This is a responsive single-page app built with **Next.js App Router** and **TypeScript** to display and filter sports leagues using the [TheSportsDB API](https://www.thesportsdb.com/api.php).
 
-First, run the development server:
+## AI Tools Used
+
+- **ChatGPT 4o**: For scaffolding and folder structure decisions.
+- **GitHub Copilot**: Coding in VS Code. 
+
+## Decisions & Considerations
+
+	•	Used a minimal, functional UI with priority on usability over visual polish (as per assignment scope)
+	•	Avoided server-side rendering or server-side caching since the dataset is small and API latency is low
+	•	Kept badge cache in memory with TTL for simplicity over localStorage/IndexedDB
+	•	Could be extended with pagination, sorting, or more detailed league views
+
+## Possible Further Improvements
+
+	•	Use SWR or React Query for better caching and revalidation
+	•	Persist search/sport filters in URL query params
+	•	Add testing with Jest + React Testing Library
+	•	Add unit types and stronger domain modeling for API responses
+
+## Features
+
+- List of leagues with name, sport, and alternate name
+- Search filter by league name
+- Dropdown filter by sport
+- Click to view season badge (with cache)
+
+## Run Locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: [Next.js](https://nextjs.org/) with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Linting**: ESLint with `@typescript-eslint`
+- **Formatting**: Prettier
+- **Data Source**: [TheSportsDB API](https://www.thesportsdb.com/api.php)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Implementation Details
 
-## Learn More
+- **Component-based structure** using reusable components: `SearchBar`, `SportFilterDropdown`, and `LeagueCard`
+- **Responsive UI** built with Tailwind's utility-first classes
+- **Client-side filtering** using `useState` and `useEffect`
+- **Image caching** using a simple in-memory `Map` with TTL (1-hour expiry)
+- **Badge display logic** with loading and error states for robust UX
+- **Dark/light theme support** with Tailwind’s `dark:` variants
+- **No usage of `any`** — enforced through `noImplicitAny` in `tsconfig` and `@typescript-eslint/no-explicit-any`
 
-To learn more about Next.js, take a look at the following resources:
+## Folder Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+/app
+layout.tsx
+page.tsx
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+/components
+LeagueCard.tsx
+SearchBar.tsx
+SportFilterDropdown.tsx
 
-## Deploy on Vercel
+/lib
+api.ts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+/public
+favicon.ico
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+/styles
+globals.css
+
+## Linting & Formatting
+
+Run linting:
+
+```bash
+npm run lint
+```
+
+Run Prettier fix:
+
+```bash
+npm run prettier
+```
